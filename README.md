@@ -23,3 +23,11 @@ doujin {
   page_count: 27
 } 
 ```
+
+## Branches
+
+### main_branch
+in this branch if a dojin does not exist you get a null response take care and handle this.
+
+### nhentai-js_style
+here you can use the the method exists to check if the doujin exists. Attention this seems to end in 2 request in case the doujin exists
