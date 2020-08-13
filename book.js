@@ -20,8 +20,11 @@ class doujin {
 }
 
 async function getDoujin(id) {
-
-    let book = await api.getBook(id);
+    
+    let book = await api.getBook(id)
+        .catch(function (error) {
+            return null;
+    });
 
     let title = await book.title.pretty;
 
