@@ -105,4 +105,3 @@ async function language_analyser(languages) {
 }
 
 module.exports.getDoujin = getDoujin;
-module.exports.tags_Sorter = tags_Sorter;
