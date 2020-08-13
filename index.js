@@ -6,8 +6,12 @@ main();
 // https://www.npmjs.com/package/nhentai-api
 async function main() {
 
-    //for mersheesh
-    let doujin = await book.getDoujin(73096);
+    let id = 187;
 
-    console.log(doujin);
+    book.exists(id).then(async function () {
+        let doujin = await book.getDoujin(id);
+        console.log(doujin);
+    }).catch(function (error) {
+        console.log('this might not be a valid number');
+    });
 }

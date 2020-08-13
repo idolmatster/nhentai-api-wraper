@@ -19,9 +19,20 @@ class doujin {
 
 }
 
+async function exists(id) {
+    api.getBook().
+        catch(function (error) {
+            return false;
+        });
+    return true;
+}
+
 async function getDoujin(id) {
 
-    let book = await api.getBook(id);
+    let book = await api.getBook(id)
+        .catch(function (error) {
+            return null;
+        });
 
     let title = await book.title.pretty;
 
@@ -105,3 +116,4 @@ async function language_analyser(languages) {
 }
 
 module.exports.getDoujin = getDoujin;
+module.exports.exists = exists;
